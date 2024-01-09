@@ -16,6 +16,8 @@ export class BatchesComponent implements OnInit{
   batches: Batch[] = [];
   materials: Material[] = [];
 
+  displayedColumns = ['Id', 'Material', 'Quantidade', 'Status', 'Excluir']
+
   constructor(
     private materialService: MaterialService,
     private batchService: BatchService,

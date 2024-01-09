@@ -59,39 +59,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-
-
-
-<!-- <table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th>Valor Nominal</th>
-            <th>Limite Inferior</th>
-            <th>Limite Superior</th>
-            <th>Justificativa</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let characteristic of characteristics">
-        <tr>
-            <td>{{characteristic.id}} </td>
-            <td>{{characteristic.name}}</td>
-            <td>{{characteristic.description}}</td>
-            <td>{{characteristic.type}}</td>
-            <td>{{characteristic.inferiorLimit}}</td>
-            <td>{{characteristic.superiorLimit}}</td>
-            <td>{{characteristic.justify}}</td>
-            <td>
-                <button (click)="deleteCharacteristic(characteristic.id!)" mat-raised-button color="warn">Excluir</button>
-            </td>
-        </tr>
-    </tbody>
-</table> -->
-
 <div>
     <button routerLink="" mat-raised-button>Voltar</button>
 </div>
