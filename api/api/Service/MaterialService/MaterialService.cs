@@ -82,7 +82,10 @@ namespace api.Service.MaterialService
 
                 _context.Add(newMaterial);
                 await _context.SaveChangesAsync();
-                serviceResponse.Data = _context.Materials.ToList();
+                serviceResponse.Data = await _context.Materials
+                .Include(material => material.MaterialQualityCharacteristics)
+                .Include(material => material.MaterialQualityVision)
+                .ToListAsync();
 
             }
             catch (Exception ex)

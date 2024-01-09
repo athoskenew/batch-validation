@@ -1,5 +1,7 @@
 using api.DataContext;
 using api.Service.MaterialService;
+using api.Service.QualityService.QualityCharacteristics;
+using api.Service.QualityService.QualityVision;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMaterialInterface, MaterialService>();
+builder.Services.AddScoped<IQualityCharacteristicsInterface, QualityCharacteristicsService>();
+builder.Services.AddScoped<IQualityVisionInterface, QualityVisionService>();
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

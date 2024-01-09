@@ -24,9 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\BatchController\" />
-    <Folder Include="Controllers\QualityController\" />
     <Folder Include="Service\BatchService\" />
-    <Folder Include="Service\QualityService\" />
   </ItemGroup>
 
 </Project>

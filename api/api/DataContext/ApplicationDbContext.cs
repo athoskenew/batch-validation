@@ -27,5 +27,6 @@ namespace api.DataContext
         }
 
         public DbSet<MaterialModel> Materials { get; set; }
+
     }
 }
