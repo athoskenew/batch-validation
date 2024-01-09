@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BatchService } from '../../services/Batch/batch.service';
 import { MaterialService } from '../../services/Material/material.service';
 import { Material } from '../../models/Materials';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-batches',
@@ -13,6 +14,7 @@ import { Material } from '../../models/Materials';
 export class BatchesComponent implements OnInit{
 
   batches: Batch[] = [];
+  materials: Material[] = [];
 
   constructor(
     private materialService: MaterialService,
@@ -27,10 +29,14 @@ export class BatchesComponent implements OnInit{
       const responseData = data.data;
       this.batches = responseData;
     })
+
+    this.materialService.GetMaterials().subscribe((data) => {
+      this.materials = data.data;
+    });
     
   }
 
-  navigateToNewCharacteristic(): void {
+  navigateToNewBatch(): void {
     this.router.navigate(['/new-batch']);
   }
 
@@ -40,11 +46,9 @@ export class BatchesComponent implements OnInit{
     })
   }
 
-  getMaterialName(materialId: number){
-    let material: Material;
-    this.materialService.GetMaterialById(materialId).subscribe(data =>{
-      material = data.data;
-      return material.name;
-    })
-  }
+  getMaterialName(materialId: number): string {
+    const material = this.materials.find(material => material.id === materialId);
+    return material ? material.name : 'Error';
+}
+  
 }

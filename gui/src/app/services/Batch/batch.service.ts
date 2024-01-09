@@ -22,8 +22,8 @@ export class BatchService {
     return this.http.post<Response<Batch[]>>(`${this.apiUrl}?materialId=${materialId}`, batch);
   }
 
-  DeleteBatch(materialId: number) : Observable<Response<Batch>>{
-    return this.http.delete<Response<Batch>>(`${this.apiUrl}?materialId=${materialId}`);
+  DeleteBatch(batchId: number) : Observable<Response<Batch>>{
+    return this.http.delete<Response<Batch>>(`${this.apiUrl}?batchId=${batchId}`);
   }
 
 }

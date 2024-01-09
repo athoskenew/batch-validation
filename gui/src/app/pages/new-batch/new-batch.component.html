@@ -1,0 +1,21 @@
+<h1>Cadastrar Lote</h1>
+
+<form [formGroup]="batchForm" #formDit="ngForm">
+
+    <div class="input_box">
+        <label>Material:</label>
+        <select id="materialId" formControlName="materialId" required>
+            <option *ngFor="let material of materials" [ngValue]="material.id">{{ material.name }}</option>
+        </select>
+    </div>
+
+    <div class="input_box">
+        <label>Quantidade:</label>
+        <input type="number" formControlName="amount" placeholder="Quantidade(Kg)" required>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!batchForm.valid" (click)="submit()">Cadastrar</button>
+        <button (click)="backToBatches()">Voltar</button>
+    </div>
+</form>

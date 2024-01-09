@@ -37,9 +37,9 @@ namespace api.Controllers.BatchController
         }
 
         [HttpDelete]
-        public async Task<ActionResult<ServiceResponse<BatchModel>>> DeleteBatch(int id)
+        public async Task<ActionResult<ServiceResponse<BatchModel>>> DeleteBatch(int batchId)
         {
-            return Ok(await _batchServiceInterface.DeleteBatch(id));
+            return Ok(await _batchServiceInterface.DeleteBatch(batchId));
         }
 
 

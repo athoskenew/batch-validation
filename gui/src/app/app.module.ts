@@ -15,6 +15,7 @@ import { NewVisionComponent } from './pages/new-vision/new-vision.component';
 import { CharacteristicsComponent } from './pages/characteristics/characteristics.component';
 import { NewCharacteristicComponent } from './pages/new-characteristic/new-characteristic.component';
 import { BatchesComponent } from './pages/batches/batches.component';
+import { NewBatchComponent } from './pages/new-batch/new-batch.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BatchesComponent } from './pages/batches/batches.component';
     NewVisionComponent,
     CharacteristicsComponent,
     NewCharacteristicComponent,
-    BatchesComponent
+    BatchesComponent,
+    NewBatchComponent
   ],
   imports: [
     BrowserModule,

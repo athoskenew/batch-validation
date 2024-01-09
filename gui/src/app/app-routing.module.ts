@@ -7,6 +7,7 @@ import { NewVisionComponent } from './pages/new-vision/new-vision.component';
 import { CharacteristicsComponent } from './pages/characteristics/characteristics.component';
 import { NewCharacteristicComponent } from './pages/new-characteristic/new-characteristic.component';
 import { BatchesComponent } from './pages/batches/batches.component';
+import { NewBatchComponent } from './pages/new-batch/new-batch.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'new-vision/:id', component: NewVisionComponent},
   {path: 'characteristics/:id', component: CharacteristicsComponent},
   {path: 'new-characteristic/:id', component: NewCharacteristicComponent},
-  {path: 'batches', component: BatchesComponent}
+  {path: 'batches', component: BatchesComponent},
+  {path: 'new-batch', component: NewBatchComponent}
 ];
 
 @NgModule({

@@ -22,7 +22,7 @@ export class MaterialService {
   }
 
   GetMaterialById(materialId: number) : Observable<Response<Material>>{
-    return this.http.get<Response<Material>>(`this.apiUrl/${materialId}`);
+    return this.http.get<Response<Material>>(`${this.apiUrl}/${materialId}`);
   }
 
   DeleteMaterial(id: number) : Observable<Response<Material[]>>{
