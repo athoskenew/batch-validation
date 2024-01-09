@@ -22,6 +22,28 @@ namespace api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("api.Models.Batch.BatchModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Batches");
+                });
+
             modelBuilder.Entity("api.Models.Material.MaterialModel", b =>
                 {
                     b.Property<int>("Id")
@@ -63,6 +85,9 @@ namespace api.Migrations
 
                     b.Property<double>("InferiorLimit")
                         .HasColumnType("float");
+
+                    b.Property<bool>("Justify")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MaterialModelId")
                         .HasColumnType("int");

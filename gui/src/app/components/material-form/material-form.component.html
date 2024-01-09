@@ -1,0 +1,18 @@
+<h1>Cadastrar Material</h1>
+
+<form [formGroup]="materialsForm" (ngSubmit)="submit()" #formDit="ngForm">
+    <div class="input_box">
+        <label>Nome:</label>
+        <input type="text" formControlName="name" placeholder="Nome do material!" required>
+    </div>
+
+    <div class="input_box">
+        <label>Descrição:</label>
+        <input type="text" formControlName="description" placeholder="Descrição do material!" required>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!materialsForm.valid">Cadastrar</button>
+        <button routerLink="">Voltar</button>
+    </div>
+</form>

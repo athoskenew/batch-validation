@@ -1,0 +1,30 @@
+<div>
+    <button (click)="navigateToNewVision()" [disabled]="vision != null">Cadastrar Visão</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Quantidade Mínima</th>
+            <th>Tipo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="vision != null">
+        <tr>
+            <td>{{vision.id}} </td>
+            <td>{{vision.name}}</td>
+            <td>{{vision.minimumQuantity}}</td>
+            <td>{{vision.typeOfCalculation}}</td>
+            <td>
+                <button (click)="deleteVision()">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button routerLink="">Voltar</button>
+</div>

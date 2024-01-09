@@ -1,0 +1,34 @@
+<div>
+    <button routerLink="/material">Cadastrar novo material</button>
+    <button routerLink="/batches">Lotes</button>
+    <div class="Material-box">
+        <label>Procurar</label>
+        <input type="text" placeholder="Qual material está buscando?" (input)="search($event)">
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Material</th>
+            <th>Descrição</th>
+            <th>Qualidade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let material of materials">
+        <tr>
+            <td>{{material.id}} </td>
+            <td>{{material.name}}</td>
+            <td>{{material.description}}</td>
+            <td>
+                <button routerLink="/characteristics/{{material.id}}">Caracteristicas</button>
+                <button routerLink="/vision/{{material.id}}">Visão</button>
+            </td>
+            <td>
+                <button (click)="delete(material.id!)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

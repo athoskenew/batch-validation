@@ -1,0 +1,33 @@
+<div>
+    <button routerLink="/new-batch">Cadastrar novo lote</button>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Material</th>
+            <th>Quantidade (KG)</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let batch of batches">
+        <tr>
+            <td>{{batch.id}} </td>
+            <td>aavv</td>
+            <td>{{batch.amount}}</td>
+            <td>{{batch.status}}</td>
+            <td>
+                <button routerLink="/launch-test/{{batch.id}}">Lançar Ensaio</button>
+            </td>
+            <td>
+                <button (click)="deleteBatch(batch.id!)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    <button routerLink="">Voltar</button>
+</div>

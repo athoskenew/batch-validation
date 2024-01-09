@@ -1,0 +1,25 @@
+<h1>Cadastrar Visão</h1>
+
+<form [formGroup]="qualityVisionForm" #formDit="ngForm">
+    <div class="input_box">
+        <label>Nome:</label>
+        <input type="text" formControlName="name" placeholder="Nome da visão!" required>
+    </div>
+
+    <div class="input_box">
+        <label>Quantidade Mínima:</label>
+        <input type="number" formControlName="minimumQuantity" placeholder="Quantidade mínima da visão" required>
+    </div>
+
+    <div class="input_box">
+        <label>Tipo de cálculo:</label>
+        <select id="type" formControlName="type" required="">
+            <option value="0">0</option>
+        </select>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!qualityVisionForm.valid" (click)="submit()">Cadastrar</button>
+        <button (click)="backToVision()">Voltar</button>
+    </div>
+</form>
