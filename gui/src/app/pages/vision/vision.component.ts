@@ -10,8 +10,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VisionComponent implements OnInit{
 
-  vision!: QualityVision;
+  vision: QualityVision[] = [];
   id!: number;
+
+  displayedColumns = ['Id', 'Material', 'QuantidadeMinima', 'Tipo', 'Excluir']
 
   constructor(
     private visionService: QualityVisionService, 
@@ -22,7 +24,13 @@ export class VisionComponent implements OnInit{
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.visionService.GetVision(this.id).subscribe(data =>{
-      this.vision = data.data;
+      
+      if (data.data == null){
+        this.vision = []
+      } else{
+        this.vision = [data.data];
+      }
+      
     });
   }
 

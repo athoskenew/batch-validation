@@ -1,18 +1,24 @@
+<mat-card>
 <h1>Cadastrar Material</h1>
 
 <form [formGroup]="materialsForm" (ngSubmit)="submit()" #formDit="ngForm">
     <div class="input_box">
-        <label>Nome:</label>
-        <input type="text" formControlName="name" placeholder="Nome do material!" required>
+        <mat-form-field>
+            <mat-label>Nome:</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="Nome do material!" required>
+          </mat-form-field>     
     </div>
 
     <div class="input_box">
-        <label>Descrição:</label>
-        <input type="text" formControlName="description" placeholder="Descrição do material!" required>
+        <mat-form-field>
+            <mat-label>Descrição:</mat-label>
+            <input matInput type="text" formControlName="description" placeholder="Descrição do material!" required>
+          </mat-form-field>
     </div>
 
     <div class="btn-box">
-        <button type="submit" [disabled]="!materialsForm.valid">Cadastrar</button>
-        <button routerLink="">Voltar</button>
+        <button type="submit" [disabled]="!materialsForm.valid" mat-raised-button color="primary">Cadastrar</button>
+        <button routerLink="" mat-raised-button>Voltar</button>
     </div>
 </form>
+</mat-card>

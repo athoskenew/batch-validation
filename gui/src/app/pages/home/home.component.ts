@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit{
   materials: Material[] = [];
   generalMaterials: Material[] = [];
 
+  displayedColumns = ['Id', 'Material', 'Descricao', 'Qualidade', 'Excluir']
+
   constructor(private materialService: MaterialService, private router: Router){}
 
   ngOnInit(): void {

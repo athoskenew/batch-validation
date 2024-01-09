@@ -13,6 +13,8 @@ export class CharacteristicsComponent implements OnInit{
   characteristics: QualityCharacteristic[] = [];
   id!: number;
 
+  displayedColumns = ['Id', 'Nome', 'Descricao', 'Tipo', 'LimiteInferior', 'LimiteSuperior', 'Justificativa', 'Excluir']
+
   constructor(
     private qualityCharacteristicsService: QualityCharacteristicService, 
     private route: ActivatedRoute,

@@ -1,34 +1,55 @@
+<mat-card>
 <div>
-    <button routerLink="/material">Cadastrar novo material</button>
-    <button routerLink="/batches">Lotes</button>
+    <button routerLink="/material" mat-button>Cadastrar novo material</button>
+    <button routerLink="/batches" mat-button>Lotes</button>
     <div class="Material-box">
-        <label>Procurar</label>
-        <input type="text" placeholder="Qual material está buscando?" (input)="search($event)">
+        <mat-form-field>
+            <mat-label>Procurar</mat-label>
+            <input matInput type="text" placeholder="Qual material está buscando?" (input)="search($event)">
+          </mat-form-field> 
     </div>
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Material</th>
-            <th>Descrição</th>
-            <th>Qualidade</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let material of materials">
-        <tr>
-            <td>{{material.id}} </td>
-            <td>{{material.name}}</td>
-            <td>{{material.description}}</td>
-            <td>
-                <button routerLink="/characteristics/{{material.id}}">Caracteristicas</button>
-                <button routerLink="/vision/{{material.id}}">Visão</button>
-            </td>
-            <td>
-                <button (click)="delete(material.id!)">Excluir</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+<table mat-table [dataSource]="materials" class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let material"> {{material.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Material">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let material"> {{material.name}} </td>
+    </ng-container>
+  
+    <!-- Description Column -->
+    <ng-container matColumnDef="Descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let material"> {{material.description}} </td>
+    </ng-container>
+  
+    <!-- Quality Column -->
+    <ng-container matColumnDef="Qualidade">
+      <th mat-header-cell *matHeaderCellDef>Qualidade</th>
+      <td mat-cell *matCellDef="let material">
+        <button routerLink="/characteristics/{{material.id}}" mat-raised-button>Caracteristicas</button>
+        <button routerLink="/vision/{{material.id}}" mat-raised-button>Visão</button>
+      </td>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="Excluir">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let material">
+            <button (click)="delete(material.id!)" mat-raised-button color="warn">Excluir</button>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</mat-card>

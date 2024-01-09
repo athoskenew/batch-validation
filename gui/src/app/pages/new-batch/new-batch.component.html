@@ -1,21 +1,27 @@
+<mat-card>
 <h1>Cadastrar Lote</h1>
 
 <form [formGroup]="batchForm" #formDit="ngForm">
 
     <div class="input_box">
-        <label>Material:</label>
-        <select id="materialId" formControlName="materialId" required>
-            <option *ngFor="let material of materials" [ngValue]="material.id">{{ material.name }}</option>
-        </select>
+        <mat-form-field>
+            <mat-label>Material:</mat-label>
+            <mat-select id="materialId" formControlName="materialId" required>
+                <mat-option *ngFor="let material of materials" [value]="material.id">{{ material.name }}</mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 
     <div class="input_box">
-        <label>Quantidade:</label>
-        <input type="number" formControlName="amount" placeholder="Quantidade(Kg)" required>
+        <mat-form-field>
+            <mat-label>Quantidade (Kg):</mat-label>
+            <input matInput type="number" formControlName="amount" placeholder="Quantidade(Kg)" required>
+        </mat-form-field>
     </div>
 
     <div class="btn-box">
-        <button type="submit" [disabled]="!batchForm.valid" (click)="submit()">Cadastrar</button>
-        <button (click)="backToBatches()">Voltar</button>
+        <button type="submit" [disabled]="!batchForm.valid" (click)="submit()" mat-raised-button color="primary">Cadastrar</button>
+        <button (click)="backToBatches()" mat-raised-button>Voltar</button>
     </div>
 </form>
+</mat-card>

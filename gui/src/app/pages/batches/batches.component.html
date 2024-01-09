@@ -1,5 +1,6 @@
+<mat-card>
 <div>
-    <button (click)="navigateToNewBatch()">Cadastrar novo lote</button>
+    <button (click)="navigateToNewBatch()" mat-button>Cadastrar novo lote</button>
 </div>
 
 <table class="table">
@@ -19,15 +20,16 @@
             <td>{{batch.amount}}</td>
             <td>{{batch.status}}</td>
             <td>
-                <button routerLink="/launch-test/{{batch.id}}">Lançar Ensaio</button>
+                <button routerLink="/launch-test/{{batch.id}}" mat-raised-button color="accent">Lançar Ensaio</button>
             </td>
             <td>
-                <button (click)="deleteBatch(batch.id!)">Excluir</button>
+                <button (click)="deleteBatch(batch.id!)" mat-raised-button color="warn">Excluir</button>
             </td>
         </tr>
     </tbody>
 </table>
 
 <div>
-    <button routerLink="">Voltar</button>
+    <button routerLink="" mat-raised-button>Voltar</button>
 </div>
+</mat-card>
