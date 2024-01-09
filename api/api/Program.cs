@@ -1,4 +1,5 @@
 using api.DataContext;
+using api.Service.BatchService;
 using api.Service.MaterialService;
 using api.Service.QualityService.QualityCharacteristics;
 using api.Service.QualityService.QualityVision;
@@ -15,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMaterialInterface, MaterialService>();
 builder.Services.AddScoped<IQualityCharacteristicsInterface, QualityCharacteristicsService>();
 builder.Services.AddScoped<IQualityVisionInterface, QualityVisionService>();
+builder.Services.AddScoped<IBatchServiceInterface, BatchService>();
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

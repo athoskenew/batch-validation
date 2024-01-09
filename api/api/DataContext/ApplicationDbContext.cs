@@ -1,4 +1,5 @@
-﻿using api.Models.Material;
+﻿using api.Models.Batch;
+using api.Models.Material;
 using api.Models.Quality;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,7 @@ namespace api.DataContext
         }
 
         public DbSet<MaterialModel> Materials { get; set; }
+        public DbSet<BatchModel> Batches { get; set; }
 
-    }
+}
 }
