@@ -72,7 +72,7 @@ cd api
 ```
 ```bash
 dotnet restore
-dotnet update-database
+dotnet ef database update
 dotnet build
 dotnet run
 ```
