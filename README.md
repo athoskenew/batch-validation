@@ -52,6 +52,7 @@ Para a arquitetura do Front-End, utilizou-se a arquitetura padrão do Angular, c
 1. Primeiro veja se você está com o .NET 8.0 e Angular CLI 17.0.9 instalado.
 
    - [Instalar Dotnet](https://dotnet.microsoft.com/pt-br/download)
+   - [Instalar EntityFrameWork CLI](https://learn.microsoft.com/pt-br/ef/core/cli/dotnet)
    - [Instalar Angular CLI](https://angular.io/cli)
 
 2. Clone o repositório do GitHub:
@@ -72,8 +73,10 @@ cd api
 ```
 ```bash
 dotnet restore
-dotnet ef database update
+dotnet tool update --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet build
+cd api
 dotnet run
 ```
 O servidor iniciará em `http://localhost:7267` utilizando o Swagger para visualização da API.
