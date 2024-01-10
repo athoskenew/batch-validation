@@ -29,7 +29,13 @@ Certifique-se de ter todos os componentes instalados em sua máquina para testar
 
 Algumas informações foram passadas para a criação deste projeto, a partir delas, foi montada uma arquitetura em diagrama de classes UML e criados os relacionamentos das entidades.
 
-IMAGENS AQUI
+<p align="center">
+<img src="https://i.imgur.com/CYVAo1F.png">
+</p>
+
+<p align="center">
+Figura 1
+</p>
 
 Como pode ser observado na Figura 1, teremos em nossa API a possibilidade de criar materiais, adicionar características de qualidade aos materiais e adicionar uma metodologia (visão) de qualidade para o material.
 
@@ -101,10 +107,28 @@ Com isso o projeto estará rodando localmente e pronto para ser testado!
 
 Esta é a atual visualização da API e do Front-End.
 ### API
+<p align="center">
+   
 ![](https://i.imgur.com/mNRO0v2.png)
+
+</p>
+
+<p align="center">
+Figura 2
+</p>
+
 ### Front-End
 ![](https://i.imgur.com/xFtqZoF.png)
+
+<p align="center">
+Figura 3
+</p>
+
 ![](https://i.imgur.com/UVnC4z0.png)
+
+<p align="center">
+Figura 4
+</p>
 
 
 ## 📄 Referências
