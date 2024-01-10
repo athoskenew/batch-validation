@@ -70,13 +70,13 @@ cd batch-validation
 
 ```bash
 cd api
+cd api
 ```
 ```bash
 dotnet restore
 dotnet tool update --global dotnet-ef
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet build
-cd api
 dotnet run
 ```
 O servidor iniciará em `http://localhost:7267` utilizando o Swagger para visualização da API.
