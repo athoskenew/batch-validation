@@ -1,0 +1,33 @@
+<mat-card>
+<h1>Cadastrar Visão</h1>
+
+<form [formGroup]="qualityVisionForm" #formDit="ngForm">
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Nome:</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="Nome da visão!" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+            <mat-label>Quantidade Mínima:</mat-label>
+            <input matInput type="number" formControlName="minimumQuantity" placeholder="Quantidade mínima da visão" required>
+        </mat-form-field>
+    </div>
+
+    <div class="input_box">
+        <mat-form-field>
+        <mat-label>Tipo de cálculo:</mat-label>
+            <mat-select id="type" formControlName="type" required="">
+                <mat-option value="0">0</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="btn-box">
+        <button type="submit" [disabled]="!qualityVisionForm.valid" (click)="submit()" mat-raised-button color="primary">Cadastrar</button>
+        <button (click)="backToVision()" mat-raised-button>Voltar</button>
+    </div>
+</form>
+</mat-card>

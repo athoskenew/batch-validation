@@ -1,0 +1,24 @@
+# Arquivos temporários
+bin/
+obj/
+
+# Arquivos de compilação
+*.exe
+*.dll
+*.pdb
+
+# Logs e arquivos gerados automaticamente
+*.log
+*.config
+
+# Pacotes NuGet
+packages/
+
+# Arquivos de usuário do Visual Studio
+*.user
+*.suo
+*.cache
+
+# Arquivos de configuração criados por diferentes ferramentas
+*.vscode/
+.vs/

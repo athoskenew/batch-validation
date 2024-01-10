@@ -1,0 +1,58 @@
+<mat-card>
+  <div>
+    <h2>Validação de lotes de materiais</h2>
+  </div>
+<div class="baseNav">
+    <button routerLink="/material" mat-button>Cadastrar novo material</button>
+    <button routerLink="/batches" mat-button>Lotes</button>
+    <div class="Material-box">
+        <mat-form-field>
+            <mat-label>Procurar</mat-label>
+            <input matInput type="text" placeholder="Qual material está buscando?" (input)="search($event)">
+          </mat-form-field> 
+    </div>
+</div>
+
+
+<table mat-table [dataSource]="materials" class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let material"> {{material.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Material">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let material"> {{material.name}} </td>
+    </ng-container>
+  
+    <!-- Description Column -->
+    <ng-container matColumnDef="Descricao">
+      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let material"> {{material.description}} </td>
+    </ng-container>
+  
+    <!-- Quality Column -->
+    <ng-container matColumnDef="Qualidade">
+      <th mat-header-cell *matHeaderCellDef>Qualidade</th>
+      <td mat-cell *matCellDef="let material">
+        <button routerLink="/characteristics/{{material.id}}" mat-raised-button>Caracteristicas</button>
+        <button routerLink="/vision/{{material.id}}" mat-raised-button>Visão</button>
+      </td>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="Excluir">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let material">
+            <button (click)="delete(material.id!)" mat-raised-button color="warn">Excluir</button>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</mat-card>
